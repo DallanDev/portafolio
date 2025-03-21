@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚡Portafolio de Diseños Dallán Márquez</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/main.js" defer></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #000;
+            color: #ffd700;
+            margin: 0;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #111;
+        }
+        header .logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        header .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #ffd700;
+            font-weight: 500;
+        }
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+        }
+        .proyectos {
+            padding: 2rem;
+            text-align: center;
+        }
+        .categorias button {
+            margin: 0.5rem;
+            padding: 0.5rem 1rem;
+            background-color: #222;
+            color: #ffd700;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+        .categorias button:hover {
+            background-color: #333;
+        }
+        .proyecto-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            padding: 2rem;
+        }
+        .proyecto-card {
+            background-color: #111;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .proyecto-card:hover {
+            transform: scale(1.05);
+        }
+        .proyecto-card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .sobre-mi {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #000;
+            color: #ffd700;
+            text-align: center;
+        }
+        .sobre-mi img {
+            border-radius: 50%;
+            margin-right: 20px;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+        .sobre-mi-texto {
+            max-width: 600px;
+        }
+        .sobre-mi p {
+            margin: 10px 0;
+            font-size: 1.2rem;
+        }
+        .frase-inspiradora {
+            margin-top: 20px;
+            font-style: italic;
+            font-size: 1.5rem;
+            color: #fff;
+        }
+        .contacto {
+            padding: 2rem;
+            text-align: center;
+            background-color: #111;
+            color: #ffd700;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 50vh;
+        }
+        .contacto a {
+            color: #ffd700;
+            text-decoration: none;
+            font-size: 1.5rem;
+        }
+        .contacto a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/perfil.jpg" alt="Foto de perfil">
+        </div>
+        <nav>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#sobre-mi">Sobre Mí</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+    <section class="hero">
+        <h2>Bienvenido a mi Portafolio de Diseños<br>con Canva</h2>
+    </section>
+    <section id="proyectos" class="proyectos">
+        <h2>Proyectos</h2>
+        <div class="categorias">
+            <button onclick="filtrarProyectos('todos')">Todos</button>
+            <button onclick="filtrarProyectos('invitaciones')">Invitaciones</button>
+            <button onclick="filtrarProyectos('flyers')">Flyers de Publicidad</button>
+            <button onclick="filtrarProyectos('videos')">Videos Interactivos</button>
+            <button onclick="filtrarProyectos('documentos')">Documentos</button>
+            <button onclick="filtrarProyectos('pendones')">Pendones</button>
+            <button onclick="filtrarProyectos('otros')">Otros Diseños</button>
+        </div>
+        <div class="proyecto-grid" id="galeria">
+            <div class="proyecto-card invitaciones">
+                <img src="images/invitacion_1.jpg" alt="Invitación 1">
+                <p>Invitaciones de Cumpleaños, Graduaciones, Matrimonios</p>
+            </div>
+            <div class="proyecto-card invitaciones">
+                <img src="images/invitacion_2.jpg" alt="Invitación 2">
+                <p>Invitaciones Personalizadas</p>
+            </div>
+            <div class="proyecto-card flyers">
+                <img src="images/Flyer_1.jpg" alt="Flyer Publicitario 1">
+                <p>Flyer para darle más Publicidad a cualquier Negocio</p>
+            </div>
+            <div class="proyecto-card flyers">
+                <img src="images/Flyer_2.jpg" alt="Flyer Publicitario 2">
+                <p>Flyer con Estilo y Creatividad</p>
+            </div>
+            <div class="proyecto-card videos">
+                <img src="images/video_1.jpg" alt="Video Interactivo 1">
+                <p>Edición de Videos, insertar efectos de sonidos, transiciones y más</p>
+            </div>
+            <div class="proyecto-card videos">
+                <img src="images/Video_2.jpg" alt="Video Interactivo 2">
+                <p>Manejo de la linea de tiempo</p>
+            </div>
+            <div class="proyecto-card documentos">
+                <img src="images/documento_1.jpg" alt="Documento 1">
+                <p>Creación de Documentos</p>
+            </div>
+            <div class="proyecto-card documentos">
+                <img src="images/documento_2.jpg" alt="Documento 2">
+                <p>Creación de Plantillas para cualquier Documentación</p>
+            </div>
+            <div class="proyecto-card pendones">
+                <img src="images/pendon_1.jpg" alt="Pendón 1">
+                <p>Pendones con buena pixelación</p>
+            </div>
+            <div class="proyecto-card pendones">
+                <img src="images/pendon_2.jpg" alt="Pendón 2">
+                <p>Para cualquier área y sector</p>
+            </div>
+            <div class="proyecto-card otros">
+                <img src="images/otros_1.jpg" alt="Otro Diseño 1">
+                <p>Proyectos y Hojas de Vida</p>
+            </div>
+            <div class="proyecto-card otros">
+                <img src="images/otros_2.jpg" alt="Otro Diseño 2">
+                <p>Diseños de Logos, Afiches, Volantes, Infografías, Mapas Conceptuales y mucho Más</p>
+            </div>
+        </div>
+    </section>
+    <section id="sobre-mi" class="sobre-mi">
+        <div class="sobre-mi-texto">
+            <img src="images/perfil.jpg" alt="Foto de perfil">
+            <p>Hola, soy un diseñador empírico colombiano de 27 años con una gran pasión por el diseño gráfico y el uso creativo de Canva. He dedicado mucho tiempo a perfeccionar mis habilidades en esta herramienta, tanto que he logrado obtener la insignia de 200 diseños realizados. Me encanta explorar las posibilidades que Canva ofrece para reflejar mis ideas y emociones en cada proyecto.</p>
+            <p class="frase-inspiradora">"El diseño es mi manera de expresar lo que me apasiona"<br>Dallán Márquez</p>
+        </div>
+    </section>
+    <section id="contacto" class="contacto">
+        <h2>Contacto</h2>
+        <p>¿Quieres comunicarte conmigo? Escríbeme a:</p>
+        <a href="mailto:tucorreo@dominio.com">dallanm97@gmail.com</a>
+    </section>
+</body>
+</html>
+
+
+
+
